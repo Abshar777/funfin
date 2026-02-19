@@ -1,0 +1,7 @@
+{
+  "name": "Fun Fin: Coming Soon",
+  "description": "An immersive, AI-powered trading LMS playground where future masters of the market hone their skills through interactive simulations and real-time AI mentoring.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
