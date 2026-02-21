@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { 
-  TrendingUp, BookOpen, Shield, Cpu, Target, Layers, Globe, 
-  Twitter, Github, Linkedin, CheckCircle2, MessageSquare, 
+import {
+  TrendingUp, BookOpen, Shield, Cpu, Target, Layers, Globe,
+  Twitter, Github, Linkedin, CheckCircle2, MessageSquare,
   Gamepad2, Lock, Smartphone, Users, Rocket, PlayCircle,
   ChevronRight, Award, Zap, BarChart3
 } from 'lucide-react';
@@ -27,12 +27,7 @@ const App: React.FC = () => {
       <nav className="relative z-50 px-6 py-6 border-b border-white/5 bg-funfin-dark/50 backdrop-blur-md sticky top-0">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-funfin-blue rounded-xl flex items-center justify-center shadow-lg shadow-funfin-blue/20">
-              <TrendingUp className="text-white w-6 h-6" />
-            </div>
-            <span className="text-2xl font-black tracking-tighter text-white">
-              FUN<span className="text-funfin-yellow">FIN</span>
-            </span>
+            <img style={{ width: '150px', }} src="/logo.png" alt="Fun Fin" />
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-400">
             <a href="#about" className="hover:text-funfin-yellow transition-colors">About</a>
@@ -47,7 +42,7 @@ const App: React.FC = () => {
 
       {/* Hero Section */}
       <header className="relative z-10 pt-20 pb-32 px-6 container mx-auto text-center">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-funfin-blue/10 border border-funfin-blue/20 mb-8"
@@ -55,8 +50,8 @@ const App: React.FC = () => {
           <span className="w-2 h-2 bg-funfin-green rounded-full animate-pulse" />
           <span className="text-xs font-bold uppercase tracking-widest text-funfin-blue">India's Premium Paid package Platform</span>
         </motion.div>
-        
-        <motion.h1 
+
+        <motion.h1
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1 }}
@@ -65,18 +60,18 @@ const App: React.FC = () => {
           LEARN. CONNECT. <br />
           <span className="text-funfin-yellow">COMPETE.</span> SUCCEED.
         </motion.h1>
-        
-        <motion.p 
+
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed"
         >
-          Combining structured courses, mentor guidance, and gamified learning — 
+          Combining structured courses, mentor guidance, and gamified learning —
           all in one powerful mobile package designed for the Indian digital ecosystem.
         </motion.p>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -124,17 +119,19 @@ const App: React.FC = () => {
             </div>
             <div className="relative">
               <div className="aspect-video rounded-3xl overflow-hidden bg-slate-800 border-8 border-white/5 shadow-2xl relative z-10">
-                <img 
-                  src="https://picsum.photos/seed/funfin/800/600" 
-                  alt="FUNFIN Platform" 
-                  className="w-full h-full object-cover opacity-60"
+                <video
+                  src="/logo.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  className="w-full h-full object-cover "
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
+                {/* <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-20 h-20 rounded-full bg-funfin-yellow flex items-center justify-center animate-pulse cursor-pointer">
                     <PlayCircle className="w-10 h-10 text-funfin-dark fill-current" />
                   </div>
-                </div>
+                </div> */}
               </div>
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-funfin-blue/20 blur-3xl rounded-full" />
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-funfin-green/20 blur-3xl rounded-full" />
@@ -180,7 +177,7 @@ const App: React.FC = () => {
               bg: "bg-white/5"
             }
           ].map((item, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               whileHover={{ y: -10 }}
               className="p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-funfin-yellow/30 transition-all group"
@@ -211,11 +208,10 @@ const App: React.FC = () => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`w-full flex items-center gap-4 p-4 rounded-2xl transition-all font-bold ${
-                      activeTab === tab.id 
-                      ? 'bg-funfin-blue text-white shadow-lg shadow-funfin-blue/20' 
-                      : 'bg-white/5 text-slate-400 hover:bg-white/10'
-                    }`}
+                    className={`w-full flex items-center gap-4 p-4 rounded-2xl transition-all font-bold ${activeTab === tab.id
+                        ? 'bg-funfin-blue text-white shadow-lg shadow-funfin-blue/20'
+                        : 'bg-white/5 text-slate-400 hover:bg-white/10'
+                      }`}
                   >
                     <tab.icon className="w-5 h-5" />
                     {tab.label}
@@ -226,7 +222,7 @@ const App: React.FC = () => {
             <div className="lg:w-2/3">
               <AnimatePresence mode="wait">
                 {activeTab === 'package' && (
-                  <motion.div 
+                  <motion.div
                     key="package"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -250,7 +246,7 @@ const App: React.FC = () => {
                   </motion.div>
                 )}
                 {activeTab === 'comm' && (
-                  <motion.div 
+                  <motion.div
                     key="comm"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -274,7 +270,7 @@ const App: React.FC = () => {
                   </motion.div>
                 )}
                 {activeTab === 'game' && (
-                  <motion.div 
+                  <motion.div
                     key="game"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -472,13 +468,12 @@ const App: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 bg-funfin-blue rounded-xl flex items-center justify-center">
-                  <TrendingUp className="text-white w-6 h-6" />
+                <div className="flex items-center gap-3">
+                  <img style={{ width: '150px', }} src="/logo.png" alt="Fun Fin" />
                 </div>
-                <span className="text-2xl font-black tracking-tighter">FUN<span className="text-funfin-yellow">FIN</span></span>
               </div>
               <p className="text-slate-500 max-w-sm mb-10 leading-relaxed font-medium">
-                Pioneering the future of financial education through 
+                Pioneering the future of financial education through
                 interactive technology, expert mentorship, and gamified experiences.
               </p>
               <div className="flex gap-4">

@@ -2,7 +2,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Message } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+const ai = new GoogleGenAI({ apiKey: "AIzaSyCujiewpiunuC0cJNqwnp61RnC20eEE2eE" });
 
 export const chatWithMentor = async (history: Message[], prompt: string) => {
   try {
