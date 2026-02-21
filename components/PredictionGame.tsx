@@ -58,41 +58,41 @@ const PredictionGame: React.FC = () => {
   );
 
   return (
-    <div className={`h-full flex flex-col bg-slate-900/60 rounded-xl border transition-all duration-500 overflow-hidden backdrop-blur-lg ${
+    <div className={`h-full flex flex-col bg-white/[0.02] rounded-3xl border transition-all duration-500 overflow-hidden backdrop-blur-lg ${
       gameState === 'active' 
-        ? (isProfitable ? 'border-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.2)]' : 'border-red-500 shadow-[0_0_20px_rgba(239,68,68,0.2)]')
-        : 'border-slate-700/50'
+        ? (isProfitable ? 'border-funfin-green shadow-[0_0_20px_rgba(8,153,129,0.2)]' : 'border-red-500 shadow-[0_0_20px_rgba(239,68,68,0.2)]')
+        : 'border-white/5'
     }`}>
-      <div className="p-4 border-b border-slate-700/50 flex items-center justify-between bg-slate-800/30">
+      <div className="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
         <div className="flex items-center gap-2">
-          <Zap className="w-5 h-5 text-yellow-400" />
-          <span className="font-semibold text-slate-200">Flash Predict</span>
+          <Zap className="w-5 h-5 text-funfin-yellow" />
+          <span className="font-bold text-white">Flash Predict</span>
         </div>
-        <div className="flex items-center gap-2 px-2 py-1 rounded bg-slate-900 border border-slate-700">
-          <Trophy className={`w-3 h-3 ${streak > 0 ? 'text-yellow-400 animate-bounce' : 'text-slate-500'}`} />
-          <span className="text-xs font-bold mono">{streak} STREAK</span>
+        <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-funfin-dark border border-white/10">
+          <Trophy className={`w-3 h-3 ${streak > 0 ? 'text-funfin-yellow animate-bounce' : 'text-slate-500'}`} />
+          <span className="text-xs font-black mono">{streak} STREAK</span>
         </div>
       </div>
 
       <div className="flex-1 p-6 flex flex-col justify-center items-center text-center">
         {gameState === 'idle' && (
           <div className="animate-in fade-in zoom-in duration-300">
-            <h4 className="text-white font-bold mb-2">Predict the next 10s</h4>
+            <h4 className="text-white font-black mb-2">Predict the next 10s</h4>
             <p className="text-slate-400 text-sm mb-6">Will BTC/USD be higher or lower?</p>
             <div className="flex gap-4">
               <button 
                 onClick={() => startGame('up')}
-                className="flex flex-col items-center gap-2 bg-slate-800 hover:bg-emerald-600/20 border border-slate-700 hover:border-emerald-500 p-4 rounded-2xl transition-all group"
+                className="flex flex-col items-center gap-2 bg-white/5 hover:bg-funfin-green/20 border border-white/10 hover:border-funfin-green p-4 rounded-2xl transition-all group"
               >
-                <TrendingUp className="w-8 h-8 text-emerald-500 group-hover:scale-125 transition-transform" />
-                <span className="text-xs font-bold uppercase tracking-tighter text-slate-300">Call</span>
+                <TrendingUp className="w-8 h-8 text-funfin-green group-hover:scale-125 transition-transform" />
+                <span className="text-xs font-black uppercase tracking-widest text-slate-300">Call</span>
               </button>
               <button 
                 onClick={() => startGame('down')}
-                className="flex flex-col items-center gap-2 bg-slate-800 hover:bg-red-600/20 border border-slate-700 hover:border-red-500 p-4 rounded-2xl transition-all group"
+                className="flex flex-col items-center gap-2 bg-white/5 hover:bg-red-600/20 border border-white/10 hover:border-red-500 p-4 rounded-2xl transition-all group"
               >
                 <TrendingDown className="w-8 h-8 text-red-500 group-hover:scale-125 transition-transform" />
-                <span className="text-xs font-bold uppercase tracking-tighter text-slate-300">Put</span>
+                <span className="text-xs font-black uppercase tracking-widest text-slate-300">Put</span>
               </button>
             </div>
           </div>
@@ -101,20 +101,20 @@ const PredictionGame: React.FC = () => {
         {gameState === 'active' && (
           <div className="w-full space-y-6 animate-in fade-in duration-300">
             <div className="relative">
-              <div className="text-5xl font-bold text-white mono mb-1 tracking-tighter">
+              <div className="text-5xl font-black text-white mono mb-1 tracking-tighter">
                 {timeLeft}s
               </div>
-              <div className="text-xs text-slate-500 uppercase font-bold tracking-[0.2em]">Remaining</div>
+              <div className="text-xs text-slate-500 uppercase font-black tracking-[0.2em]">Remaining</div>
             </div>
             
             <div className="space-y-2">
-              <div className="flex justify-between text-[10px] font-bold uppercase text-slate-500">
+              <div className="flex justify-between text-[10px] font-black uppercase text-slate-500 tracking-widest">
                 <span>Strike Price</span>
                 <span>Current Price</span>
               </div>
-              <div className="flex justify-between items-center bg-slate-900/80 p-3 rounded-lg border border-slate-700">
+              <div className="flex justify-between items-center bg-funfin-dark/80 p-4 rounded-xl border border-white/10">
                 <span className="mono text-slate-400">${entryPrice.toFixed(2)}</span>
-                <span className={`mono font-bold ${isProfitable ? 'text-emerald-400' : 'text-red-400'}`}>
+                <span className={`mono font-black ${isProfitable ? 'text-funfin-green' : 'text-red-400'}`}>
                   ${currentPrice.toFixed(2)}
                 </span>
               </div>
@@ -127,7 +127,7 @@ const PredictionGame: React.FC = () => {
             <div className={`text-6xl mb-4 flex justify-center`}>
               {result === 'win' ? '🔥' : '💀'}
             </div>
-            <h3 className={`text-2xl font-black uppercase italic ${result === 'win' ? 'text-emerald-400' : 'text-red-400'}`}>
+            <h3 className={`text-2xl font-black uppercase italic ${result === 'win' ? 'text-funfin-green' : 'text-red-400'}`}>
               {result === 'win' ? 'Profit Secured!' : 'Position Liquidated'}
             </h3>
             <p className="text-slate-400 mt-2 text-sm">Resetting simulation...</p>
@@ -135,8 +135,8 @@ const PredictionGame: React.FC = () => {
         )}
       </div>
 
-      <div className="p-3 bg-slate-800/30 border-t border-slate-700/50 text-center">
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+      <div className="p-3 bg-white/5 border-t border-white/5 text-center">
+        <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">
           {gameState === 'active' ? 'Position Live - Do not close' : 'Demo Account: $10,000.00'}
         </span>
       </div>

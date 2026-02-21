@@ -15,9 +15,9 @@ const WaitlistForm: React.FC = () => {
 
   if (submitted) {
     return (
-      <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/50 p-4 rounded-xl text-emerald-400 animate-in fade-in duration-500">
+      <div className="flex items-center gap-3 bg-funfin-green/10 border border-funfin-green/50 p-4 rounded-xl text-funfin-green animate-in fade-in duration-500">
         <CheckCircle2 className="w-6 h-6 shrink-0" />
-        <p className="font-semibold">You're in! We'll notify you when the markets open.</p>
+        <p className="font-semibold">You're in! We'll notify you when the platform launches.</p>
       </div>
     );
   }
@@ -29,12 +29,12 @@ const WaitlistForm: React.FC = () => {
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your professional email"
-        className="flex-1 bg-slate-900/50 border border-slate-700 focus:border-emerald-500 outline-none px-6 py-4 rounded-xl text-white backdrop-blur-sm transition-all text-lg"
+        placeholder="Enter your email"
+        className="flex-1 bg-white/5 border border-white/10 focus:border-funfin-blue outline-none px-6 py-4 rounded-2xl text-white backdrop-blur-sm transition-all text-lg"
       />
       <button 
         type="submit"
-        className="group bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 whitespace-nowrap active:scale-95 text-lg"
+        className="group bg-funfin-blue hover:bg-funfin-blue/90 text-white font-bold px-8 py-4 rounded-2xl transition-all flex items-center justify-center gap-2 whitespace-nowrap active:scale-95 text-lg shadow-lg shadow-funfin-blue/20"
       >
         Join Waitlist
         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

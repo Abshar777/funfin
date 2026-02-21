@@ -37,13 +37,13 @@ const TradingChart: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-full w-full bg-slate-900/40 rounded-xl p-4 border border-slate-700/50 backdrop-blur-sm relative overflow-hidden">
-      <div className="absolute top-4 left-6 z-10">
+    <div className="h-full w-full bg-white/[0.02] rounded-3xl p-6 border border-white/5 backdrop-blur-sm relative overflow-hidden">
+      <div className="absolute top-6 left-8 z-10">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          <h3 className="text-slate-300 font-bold uppercase tracking-widest text-xs">Live Market: BTC/USD</h3>
+          <span className="w-2 h-2 bg-funfin-green rounded-full animate-pulse" />
+          <h3 className="text-slate-400 font-black uppercase tracking-[0.2em] text-[10px]">Live Market: BTC/USD</h3>
         </div>
-        <p className="text-2xl font-bold text-white mono mt-1">
+        <p className="text-3xl font-black text-white mono mt-1">
           ${data[data.length - 1]?.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
         </p>
       </div>
@@ -52,23 +52,23 @@ const TradingChart: React.FC = () => {
         <AreaChart data={data}>
           <defs>
             <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
-              <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+              <stop offset="5%" stopColor="#089981" stopOpacity={0.3}/>
+              <stop offset="95%" stopColor="#089981" stopOpacity={0}/>
             </linearGradient>
           </defs>
           <XAxis dataKey="time" hide />
           <YAxis domain={['auto', 'auto']} hide />
           <Tooltip 
-            contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px' }}
-            itemStyle={{ color: '#10b981' }}
+            contentStyle={{ backgroundColor: '#231f20', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', fontWeight: 'bold' }}
+            itemStyle={{ color: '#089981' }}
           />
           <Area 
             type="monotone" 
             dataKey="price" 
-            stroke="#10b981" 
+            stroke="#089981" 
             fillOpacity={1} 
             fill="url(#colorPrice)" 
-            strokeWidth={2}
+            strokeWidth={3}
             isAnimationActive={false}
           />
         </AreaChart>

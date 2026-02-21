@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-funfin-blue: #005594;
+  --color-funfin-yellow: #ffc400;
+  --color-funfin-green: #089981;
+  --color-funfin-dark: #231f20;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-funfin-dark text-slate-50;
+    font-family: var(--font-sans);
+  }
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.chart-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
