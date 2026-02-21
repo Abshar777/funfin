@@ -13,7 +13,7 @@ import WaitlistForm from './components/WaitlistForm';
 import PredictionGame from './components/PredictionGame';
 
 const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('lms');
+  const [activeTab, setActiveTab] = useState('package');
 
   return (
     <div className="min-h-screen bg-funfin-dark text-slate-100 selection:bg-funfin-yellow/30">
@@ -53,7 +53,7 @@ const App: React.FC = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-funfin-blue/10 border border-funfin-blue/20 mb-8"
         >
           <span className="w-2 h-2 bg-funfin-green rounded-full animate-pulse" />
-          <span className="text-xs font-bold uppercase tracking-widest text-funfin-blue">India's Premium Paid LMS Platform</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-funfin-blue">India's Premium Paid package Platform</span>
         </motion.div>
         
         <motion.h1 
@@ -73,7 +73,7 @@ const App: React.FC = () => {
           className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed"
         >
           Combining structured courses, mentor guidance, and gamified learning — 
-          all in one powerful mobile app designed for the Indian digital ecosystem.
+          all in one powerful mobile package designed for the Indian digital ecosystem.
         </motion.p>
 
         <motion.div 
@@ -103,7 +103,7 @@ const App: React.FC = () => {
               <h2 className="text-sm font-black text-funfin-yellow uppercase tracking-[0.3em] mb-4">What is FUNFIN?</h2>
               <h3 className="text-4xl md:text-5xl font-black mb-8 leading-tight">
                 A Fully Monetized, <br />
-                <span className="text-funfin-blue">Mobile-First</span> LMS.
+                <span className="text-funfin-blue">Mobile-First</span> package.
               </h3>
               <p className="text-slate-400 text-lg mb-6 leading-relaxed">
                 FUNFIN is designed for Indian learners who want structured learning with real mentor support and engaging game-based experiences.
@@ -204,7 +204,7 @@ const App: React.FC = () => {
               <h3 className="text-4xl font-black mb-8">EVERYTHING YOU NEED TO MASTER YOUR SKILLS</h3>
               <div className="space-y-2">
                 {[
-                  { id: 'lms', label: 'Paid LMS', icon: BookOpen },
+                  { id: 'package', label: 'Paid package', icon: BookOpen },
                   { id: 'comm', label: 'Mentor Comm', icon: MessageSquare },
                   { id: 'game', label: 'Gamification', icon: Gamepad2 }
                 ].map((tab) => (
@@ -225,9 +225,9 @@ const App: React.FC = () => {
             </div>
             <div className="lg:w-2/3">
               <AnimatePresence mode="wait">
-                {activeTab === 'lms' && (
+                {activeTab === 'package' && (
                   <motion.div 
-                    key="lms"
+                    key="package"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
@@ -456,7 +456,7 @@ const App: React.FC = () => {
             <h4 className="text-4xl md:text-6xl font-black mb-12">READY TO TRANSFORM?</h4>
             <div className="flex flex-wrap justify-center gap-6">
               <button className="px-10 py-5 rounded-2xl bg-funfin-yellow text-funfin-dark font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-funfin-yellow/20 flex items-center gap-3">
-                <Smartphone className="w-6 h-6" /> Download the App
+                <Smartphone className="w-6 h-6" /> Download the package
               </button>
               <button className="px-10 py-5 rounded-2xl bg-white text-funfin-dark font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-white/10 flex items-center gap-3">
                 <Rocket className="w-6 h-6" /> Start Learning Now
